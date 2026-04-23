@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", serif;
+  
+  --color-bg: #050505;
+  --color-ink: #e0d8d0;
+  --color-accent: #c5a059;
+}
+
+@layer base {
+  body {
+    @apply bg-bg text-ink antialiased selection:bg-accent/30 selection:text-accent;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif font-light;
+  }
+}
+
+.bg-golden-hour {
+  background: linear-gradient(to bottom, rgba(5,5,5,0.3) 0%, rgba(197, 160, 89, 0.1) 50%, rgba(5,5,5,0.9) 100%);
+}
+
+.text-glow {
+  text-shadow: 0 0 30px rgba(197, 160, 89, 0.2);
+}
+
+.glass {
+  @apply bg-white/5 backdrop-blur-md border border-white/10;
+}
+
+.border-subtle {
+  @apply border-white/10;
+}
+
+.vertical-text {
+  writing-mode: vertical-rl;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-bg;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-white/10 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-accent/40;
+}
